@@ -7,9 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useApp } from "../context/AppContext";
+import { useAdSenseVerification } from "../hooks/useAdSenseVerification";
 import { colors, commonStyles } from "../styles/theme";
 
 export default function StatisticsScreen() {
+  useAdSenseVerification();
   const {
     isPremium,
     sessions,

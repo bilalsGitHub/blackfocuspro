@@ -7,10 +7,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useApp } from "../context/AppContext";
+import { useAdSenseVerification } from "../hooks/useAdSenseVerification";
 import { useAuth } from "../auth/AuthContext";
 import { colors, commonStyles } from "../styles/theme";
 
 export default function ProfileScreen() {
+  useAdSenseVerification();
   const {
     sessions,
     dailyGoal,

@@ -10,10 +10,12 @@ import {
 } from "react-native";
 import { activateKeepAwakeAsync, deactivateKeepAwake } from "expo-keep-awake";
 import { useApp } from "../context/AppContext";
+import { useAdSenseVerification } from "../hooks/useAdSenseVerification";
 import { saveSession } from "../services/focusService";
 import { colors, commonStyles } from "../styles/theme";
 
 export default function HomeScreen() {
+  useAdSenseVerification();
   const { defaultDuration, addSession, isPremium } = useApp();
   const [timeLeft, setTimeLeft] = useState(defaultDuration * 60); // in seconds
   const [isRunning, setIsRunning] = useState(false);
