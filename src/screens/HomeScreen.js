@@ -80,7 +80,7 @@ export default function HomeScreen() {
 
         // RIGHT = increase, LEFT = decrease
         // Adjust sensitivity: free users need lower sensitivity for 1-20 range
-        const sensitivity = isPremium ? 0.15 : 0.065;
+        const sensitivity = isPremium ? 0.15 : 0.067;
         const totalDrag = gestureState.dx;
         const deltaMinutes = Math.round(totalDrag * sensitivity);
 
@@ -122,6 +122,9 @@ export default function HomeScreen() {
           Math.min(maxSlide, newPosition)
         );
         setPersistentSliderOffset(clampedPosition);
+
+        // Update baseline to current duration for next gesture
+        baselineDuration.current = duration;
 
         lastDragX.current = 0;
         // NO animation back to center - keep position
