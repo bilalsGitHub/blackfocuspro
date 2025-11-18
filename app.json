@@ -11,21 +11,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "web": {
-      "bundler": "metro",
-      "output": "static",
-      "build": {
-        "babel": {
-          "include": []
-        }
-      },
-      "config": {
-        "firebase": {
-          "measurementId": ""
-        }
-      },
-      "meta": {
-        "google-adsense-account": "ca-pub-3388307743726055"
-      }
+      "bundler": "metro"
     },
     "ios": {
       "supportsTablet": true,
