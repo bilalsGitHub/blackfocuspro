@@ -36,7 +36,7 @@ export default function AppNavigator() {
       <Tab.Screen
         name="Statistics"
         component={StatisticsScreen}
-        options={{ tabBarLabel: "İSTATİSTİKLER" }}
+        options={{ tabBarLabel: "STATISTICS" }}
       />
       <Tab.Screen
         name="History"

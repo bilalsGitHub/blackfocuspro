@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Focus Bubble",
-    "slug": "focus-bubble",
+    "name": "Black Focus Pro",
+    "slug": "blackfocuspro",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "focusbubble",
+    "scheme": "blackfocuspro",
     "userInterfaceStyle": "dark",
     "splash": {
       "backgroundColor": "#000000"
@@ -12,15 +12,15 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.focusbubble.app",
-      "associatedDomains": ["applinks:focusbubble.app"]
+      "bundleIdentifier": "com.blackfocuspro.app",
+      "associatedDomains": ["applinks:blackfocuspro.app"]
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.focusbubble.app",
+      "package": "com.blackfocuspro.app",
       "intentFilters": [
         {
           "action": "VIEW",
@@ -28,7 +28,7 @@
           "data": [
             {
               "scheme": "https",
-              "host": "*.focusbubble.app",
+              "host": "*.blackfocuspro.app",
               "pathPrefix": "/auth/callback"
             }
           ],

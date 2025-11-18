@@ -49,7 +49,7 @@ export default function StatisticsScreen() {
   const StatCard = ({
     title,
     value,
-    unit = "dakika",
+    unit = "minutes",
     isPremiumFeature = false,
     decimalPlaces = 0,
   }) => (
@@ -82,59 +82,59 @@ export default function StatisticsScreen() {
         showsVerticalScrollIndicator={false}>
         {/* Header */}
         <View style={styles.headerSection}>
-          <Text style={styles.header}>İSTATİSTİKLER</Text>
+          <Text style={styles.header}>STATISTICS</Text>
           <View style={styles.premiumBadge}>
             <Text style={styles.badgeText}>
-              {isPremium ? "✨ Premium Üye" : "👤 Ücretsiz Üye"}
+              {isPremium ? "✨ Premium Member" : "👤 Free Member"}
             </Text>
           </View>
         </View>
 
         {/* Free Stats */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>📊 ÜCRETSIZ İSTATİSTİKLER</Text>
+          <Text style={styles.sectionTitle}>📊 FREE STATISTICS</Text>
           <StatCard
-            title="Bugün Odaklandığı Süre"
+            title="Today's Focus Time"
             value={stats.todayMinutes}
-            unit="dakika"
+            unit="minutes"
           />
           <StatCard
-            title="Toplam Odak Süresi"
+            title="Total Focus Time"
             value={stats.totalMinutes}
-            unit="dakika"
+            unit="minutes"
           />
         </View>
 
         {/* Premium Stats */}
         <View style={styles.section}>
           <View style={styles.premiumHeader}>
-            <Text style={styles.sectionTitle}>⭐ PREMIUM İSTATİSTİKLER</Text>
-            {!isPremium && <Text style={styles.premiumTag}>Kilitli</Text>}
+            <Text style={styles.sectionTitle}>⭐ PREMIUM STATISTICS</Text>
+            {!isPremium && <Text style={styles.premiumTag}>Locked</Text>}
           </View>
 
           <StatCard
-            title="Haftalık Toplam"
+            title="Weekly Total"
             value={stats.weeklyMinutes}
-            unit="dakika"
+            unit="minutes"
             isPremiumFeature={true}
           />
           <StatCard
-            title="Aylık Toplam"
+            title="Monthly Total"
             value={stats.monthlyMinutes}
-            unit="dakika"
+            unit="minutes"
             isPremiumFeature={true}
           />
           <StatCard
-            title="Ortalama Günlük"
+            title="Average Daily"
             value={stats.averageDaily}
-            unit="dakika"
+            unit="minutes"
             isPremiumFeature={true}
             decimalPlaces={1}
           />
           <StatCard
-            title="En Uzun Streak"
+            title="Longest Streak"
             value={stats.bestStreak}
-            unit="gün"
+            unit="days"
             isPremiumFeature={true}
           />
         </View>
@@ -142,15 +142,15 @@ export default function StatisticsScreen() {
         {/* Premium CTA */}
         {!isPremium && (
           <View style={styles.promoBanner}>
-            <Text style={styles.promoTitle}>🚀 Premium'a Yükselt!</Text>
+            <Text style={styles.promoTitle}>🚀 Upgrade to Premium!</Text>
             <Text style={styles.promoText}>
-              Detaylı istatistikler, haftalık ve aylık analizlerini görmek için
-              premium üyeliğe geçiş yap.
+              Get detailed statistics, weekly and monthly analytics with premium
+              membership.
             </Text>
             <TouchableOpacity
               style={styles.upgradeButton}
               onPress={togglePremium}>
-              <Text style={styles.upgradeButtonText}>Premium'a Yükselt</Text>
+              <Text style={styles.upgradeButtonText}>Upgrade to Premium</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -158,9 +158,9 @@ export default function StatisticsScreen() {
         {/* Premium Toggle for Testing */}
         {isPremium && (
           <View style={styles.devSection}>
-            <Text style={styles.devText}>Test Modu:</Text>
+            <Text style={styles.devText}>Test Mode:</Text>
             <TouchableOpacity style={styles.devButton} onPress={togglePremium}>
-              <Text style={styles.devButtonText}>Ücretsiz Moda Dön</Text>
+              <Text style={styles.devButtonText}>Switch to Free Mode</Text>
             </TouchableOpacity>
           </View>
         )}

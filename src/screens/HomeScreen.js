@@ -53,7 +53,7 @@ export default function HomeScreen() {
 
         // Calculate new position from persistent offset
         const newPosition = persistentSliderOffset + gestureState.dx;
-        const maxSlide = 300;
+        const maxSlide = 450;
         const clampedPosition = Math.max(
           -maxSlide,
           Math.min(maxSlide, newPosition)
@@ -109,7 +109,7 @@ export default function HomeScreen() {
       onPanResponderRelease: (evt, gestureState) => {
         // Save the final position
         const newPosition = persistentSliderOffset + gestureState.dx;
-        const maxSlide = 300;
+        const maxSlide = 450;
         const clampedPosition = Math.max(
           -maxSlide,
           Math.min(maxSlide, newPosition)
