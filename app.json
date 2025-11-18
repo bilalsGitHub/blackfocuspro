@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Focus Bubble",
+    "slug": "focus-bubble",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "focusbubble",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.focusbubble.app",
+      "associatedDomains": ["applinks:focusbubble.app"]
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.focusbubble.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "*.focusbubble.app",
+              "pathPrefix": "/auth/callback"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    }
+  }
+}
