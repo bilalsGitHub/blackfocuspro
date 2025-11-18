@@ -51,9 +51,14 @@ export default function HomeScreen() {
       onPanResponderMove: (evt, gestureState) => {
         if (isRunning) return;
 
+        // Premium: unlimited, Free: max 20 minutes
+        const maxLimit = isPremium ? 999 : 20;
+
+        // Adjust maxSlide based on user tier for better UX
+        const maxSlide = isPremium ? 450 : 300;
+
         // Calculate new position from persistent offset
         const newPosition = persistentSliderOffset + gestureState.dx;
-        const maxSlide = 450;
         const clampedPosition = Math.max(
           -maxSlide,
           Math.min(maxSlide, newPosition)
@@ -74,12 +79,11 @@ export default function HomeScreen() {
         }).start();
 
         // RIGHT = increase, LEFT = decrease
-        const sensitivity = 0.15;
+        // Adjust sensitivity: free users need lower sensitivity for 1-20 range
+        const sensitivity = isPremium ? 0.15 : 0.065;
         const totalDrag = gestureState.dx;
         const deltaMinutes = Math.round(totalDrag * sensitivity);
 
-        // Premium: unlimited, Free: max 20 minutes
-        const maxLimit = isPremium ? 999 : 20;
         const newDuration = Math.max(
           1,
           Math.min(maxLimit, baselineDuration.current + deltaMinutes)
@@ -107,9 +111,12 @@ export default function HomeScreen() {
         }
       },
       onPanResponderRelease: (evt, gestureState) => {
+        // Premium: unlimited, Free: max 20 minutes
+        const maxLimit = isPremium ? 999 : 20;
+        const maxSlide = isPremium ? 450 : 300;
+
         // Save the final position
         const newPosition = persistentSliderOffset + gestureState.dx;
-        const maxSlide = 450;
         const clampedPosition = Math.max(
           -maxSlide,
           Math.min(maxSlide, newPosition)
