@@ -17,6 +17,14 @@
         "babel": {
           "include": []
         }
+      },
+      "config": {
+        "firebase": {
+          "measurementId": ""
+        }
+      },
+      "meta": {
+        "google-adsense-account": "ca-pub-3388307743726055"
       }
     },
     "ios": {
